@@ -33,7 +33,6 @@ class LoginController implements ControllerInterface
             die('Please have mercy');
         }
 
-        var_dump($email);
         $stmt = $this->pdo->query('SELECT * FROM users WHERE password = "' . md5($password) . '" and email = "' . $email . '"');
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 

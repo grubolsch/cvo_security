@@ -49,7 +49,6 @@ class Invoice
 
     public function save(Pdo $pdo)
     {
-        var_dump(['userId' => $this->userId, 'name' => $this->name, 'file' => $this->file]);
         $q = $pdo->prepare('INSERT INTO invoices SET userId = :userId, name = :name, file = :file');
         $q->execute(['userId' => $this->userId, 'name' => $this->name, 'file' => $this->file]);
     }
