@@ -27,7 +27,7 @@ LOCK TABLES `users` WRITE;
     DISABLE KEYS */;
 
 INSERT INTO `users` (`id`, `email`, `password`, `isAdmin`)
-VALUES (1, 'keelen@cvoantwerpen.org', 'bc41200b941374013737be5b4fe43640', '1');
+VALUES (1, 'admin@whole-cheese.be', 'c4ab26c9257182b8bccecb1117289985', '1');
 
 /*!40000 ALTER TABLE `users`
     ENABLE KEYS */;
@@ -55,9 +55,6 @@ LOCK TABLES `invoices` WRITE;
 /*!40000 ALTER TABLE `invoices`
     DISABLE KEYS */;
 
-INSERT INTO `invoices` (`id`, `userId`, `file`, `name`)
-VALUES (1, 1, 'invoices/1/The Art of Readable Code.pdf', 'My invoice');
-
 /*!40000 ALTER TABLE `invoices`
     ENABLE KEYS */;
 UNLOCK TABLES;
@@ -70,7 +67,7 @@ CREATE TABLE `messages`
     `message`    text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
-  AUTO_INCREMENT = 5
+  AUTO_INCREMENT = 1
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_0900_ai_ci;
 
