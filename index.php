@@ -2,14 +2,21 @@
 declare(strict_types=1);
 
 use App\Controller\CreateInvoiceController;
+use App\Controller\CreateMessageController;
 use App\Controller\InvoiceDeleteController;
 use App\Controller\InvoicesOverviewController;
 use App\Controller\InvoiceViewController;
 use App\Controller\LoginController;
 use App\Controller\LogoutController;
+use App\Controller\MessageController;
 use App\Controller\RegisterController;
 
 require 'vendor/autoload.php';
+
+session_set_cookie_params([
+    'secure' => false,
+    'httponly' => false,
+]);
 
 session_start();
 
@@ -46,6 +53,12 @@ switch ($_GET['path'] ?? '') {
         break;
     case 'create-invoice':
         $controller = new CreateInvoiceController($pdo);
+        break;
+    case 'messages':
+        $controller = new MessageController($pdo);
+        break;
+    case 'create-message':
+        $controller = new CreateMessageController($pdo);
         break;
     default:
     case 'invoices':

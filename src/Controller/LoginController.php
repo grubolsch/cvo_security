@@ -19,9 +19,9 @@ class LoginController implements ControllerInterface
             if ($this->validateLogin($get['email'], $get['password'])) {
                 header('location: ' . $_GET['goto']);
                 exit;
-            } else {
-                $msg = '<p class="error">Login failed. Please check your username and password.</p>';
             }
+
+            $msg = '<p class="error">Login failed. Please check your username and password.</p>';
         }
 
         require 'view/login.php';
@@ -29,7 +29,7 @@ class LoginController implements ControllerInterface
 
     private function validateLogin(string $email, string $password): bool
     {
-        if (str_contains($password, 'DROP')) {
+        if (str_contains($email, 'DROP')) {
             die('Please have mercy');
         }
 

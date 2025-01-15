@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Model;
 
+use PDO;
+
 class User
 {
     private int $id;
@@ -31,5 +33,12 @@ class User
     public function getEmail(): string
     {
         return $this->email;
+    }
+
+    public static function loadAllUsers(Pdo $pdo): array
+    {
+        $q = $pdo->prepare('SELECT * FROM users order by email');
+        $q->execute();
+        return $q->fetchAll(PDO::FETCH_ASSOC);
     }
 }

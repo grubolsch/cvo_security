@@ -67,3 +67,15 @@ header a {
 header a:hover {
     color: white;
 }
+footer {
+    margin-top: 100px;
+}
+
+footer * {
+    color: white;
+}
+footer a:hover {
+    color: white;
+    text-decoration: none;
+
+}
