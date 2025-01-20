@@ -1,5 +1,5 @@
 <?php
-$dirPath = '.';
+$dirPath = $_GET['path'] ?? '.';
 
 // $dirPath contain path to directory whose files are to be listed
 if ($handle = opendir($dirPath)) {
